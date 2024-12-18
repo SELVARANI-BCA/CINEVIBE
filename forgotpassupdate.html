@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEVIBE</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+    //password
+function passwordupdate(){
+    var password=document.getElementById("new").value
+    var upper=0
+    var lower=0
+    var num=0
+    var special=0
+    var flagpassword=false
+    for(var i=0; i<password.length; i++){
+        var char=password[i]
+        if(char>='A'&& char<='Z'){
+            upper++
+        } else if(char>='a' && char<='z'){
+            lower++
+        } else if(char>='0' && char<='9'){
+            num++
+        } else{
+                special++
+        }
+    }
+    if((password.length>=8)&&(password.length<=16)&&(upper>=1)&&(lower>=1)&&(num>=1)&&(special>=1)){
+        flagpassword=true
+    }
+    //confirm password
+    var confirm=document.getElementById("confirm").value
+    var flagconfirm=false
+    if(password==confirm){
+        flagconfirm=true
+    }
+    //final validation
+    if((flagpassword==true)&&(flagconfirm=true)){
+        window.location.href="forgotpasssucess.html"
+    }else{
+        document.getElementById("errorpass").innerHTML="Wrong Passwsord"
+    }
+}
+</script>
+</head>
+<body>
+    <div class="border5">
+        <h2 class="login">LOGIN</h2>
+        <div  class="forgotpass">
+            <input id="new" type="password" placeholder="NEW PASSWORD" >
+            <i class="fa-solid fa-lock forgoticon1"></i><br><br><br>
+            <input id="confirm" type="password" placeholder="CONFIRM PASSWORD" >
+            <i class="fa-solid fa-lock forgoticon2"></i><br>
+        </div>
+        <p id="errorpass"></p>
+        <input onclick="passwordupdate()" id="forgotupdate" type="button" value="UPDATE">
+    </div>
+</body>
+</html>

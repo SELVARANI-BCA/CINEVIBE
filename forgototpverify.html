@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEVIBE</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <script>
+        // otp verification
+        var generatedotp=Math.floor(Math.random()*9999)
+    alert(generatedotp)
+    function otpverification(){
+        var userotp=document.getElementById("otp").value
+        if(generatedotp==userotp){
+            window.location.href='./forgotpassupdate.html'
+        }else{
+            document.getElementById("error").innerHTML='Incorrect OTP. Try again...'
+            document.getElementById("error").style.color='red'
+        }
+    }
+    function resendotp(){
+        window.location.href="./forgototpverify.html"
+    }
+    </script>
+</head>
+<body>
+    <div class="border3">
+        <h3 class="login">OTP VERIFICATION</h3>
+        <input id="otp" type="number" placeholder="OTP">
+        <input onclick="otpverification()" class="verify" type="button" value="VERIFY"></a>
+        <p id="error"></p>
+        <p class="resend">Resend OTP?</p>
+        <input onclick="resendotp()" class="click" type="button" value="CLICK HERE">
+    </div>
+</body>
+</html>

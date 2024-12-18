@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEVIBE</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+    function phonevalidation(){
+        var phonenumber=document.getElementById('forgotno').value 
+        if((phonenumber>=6000000000)&&(phonenumber<=9999999999)){
+            window.location.href="forgototpverify.html"
+        }else{
+            document.getElementById('error').innerHTML="Invalid Phonenumber"
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="border5" >
+        <h3 class="login">FORGOT PASSWORD</h3>
+        <div>
+            <input id="forgotno" type="number" placeholder="PHONE NO">
+            <i class="fa-solid fa-phone forgoticon"></i><br>
+            <input onclick="phonevalidation()" id="forgotsend" type="button" value="SEND OTP"></a>
+            <p id="error"></p>
+        </div>
+    </div>
+</body>
+</html>
